@@ -1,4 +1,4 @@
-import React from 'react';
+
 import React, { useReducer } from 'react';
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       case 'add':
       return{count:state.count + 1};
       case 'delete':
-      return{count:state.count - 1};
+      return{count:state.count > 0 ? state.count - 1 : 0};
       case 'deleteAll':
       return{count:0};
     }
